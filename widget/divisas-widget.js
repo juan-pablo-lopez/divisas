@@ -9,11 +9,11 @@
 // ── Configuración ──────────────────────────────────────────────────────────
 const CONFIG = {
   base: "MXN",
-  monedas: ["USD", "EUR", "RSD", "BAM", "MKD"],
-  monto: 100,
+  monedas: ["EUR", "RSD", "BAM", "MKD"],
+  monto: 1,
   // "baseALista": cuánto compras con `monto` de la base.
   // "listaABase": cuántas unidades de la base cuestan `monto` de cada moneda.
-  direccion: "baseALista",
+  direccion: "listaABase",
   apiBase: "https://mercado-divisas.tgojp.workers.dev",
   // Al tocar el widget se abre esta URL. Nota de iOS: tocar un widget de
   // Scriptable SIEMPRE abre Scriptable primero (no se puede evitar); con una URL
@@ -138,7 +138,7 @@ function formatearHora(iso) {
 
 // ── Construcción del widget ────────────────────────────────────────────────
 function maxFilas() {
-  if (config.widgetFamily === "small") return 3;
+  if (config.widgetFamily === "small") return 4;
   if (config.widgetFamily === "large") return 12;
   return 5; // medium (por defecto)
 }

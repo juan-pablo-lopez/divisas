@@ -11,9 +11,9 @@ export interface Estado {
 
 const DEFAULT: Estado = {
   base: "MXN",
-  monedas: ["USD", "EUR", "RSD", "BAM", "MKD"],
-  monto: 100,
-  direccion: "baseALista",
+  monedas: ["EUR", "RSD", "BAM", "MKD"],
+  monto: 1,
+  direccion: "listaABase",
 };
 
 function esCodigo(v: unknown): v is string {
