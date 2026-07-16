@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# macOS
+.DS_Store
+
+# Affinity Designer
+# - Las fuentes (.af) SÍ se respaldan en /design (no se ignoran).
+# - Los locks nunca se commitean.
+# - Ningún .af debe vivir en public/ (se copiaría a dist/ y se deployaría).
+*.af~lock~
+/frontend/public/*.af
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Cloudflare Worker
+.wrangler/
+.dev.vars
+worker-configuration.d.ts

@@ -1,0 +1,22 @@
+{
+  "name": "divisas-worker",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "//": "Los scripts desactivan CLOUDFLARE_API_TOKEN/ACCOUNT_ID (exportadas en ~/.zshrc para la cuenta de trabajo) para que wrangler use el login OAuth personal.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "env -u CLOUDFLARE_API_TOKEN -u CLOUDFLARE_ACCOUNT_ID wrangler deploy",
+    "tail": "env -u CLOUDFLARE_API_TOKEN -u CLOUDFLARE_ACCOUNT_ID wrangler tail",
+    "kv:create": "env -u CLOUDFLARE_API_TOKEN -u CLOUDFLARE_ACCOUNT_ID wrangler kv namespace create RATES_KV",
+    "types": "wrangler types"
+  },
+  "dependencies": {
+    "hono": "^4.12.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260710.1",
+    "typescript": "~5.9.3",
+    "wrangler": "^4.108.0"
+  }
+}

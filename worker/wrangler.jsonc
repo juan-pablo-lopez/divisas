@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "mercado-divisas",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-13",
+  "kv_namespaces": [
+    { "binding": "RATES_KV", "id": "0c5e5e1743a94f8cbe8b01c6ddcbde31" }
+  ],
+  "triggers": {
+    // Diario 01:00 UTC: open.er-api.com publica ~00:00–00:25 UTC; refrescamos después.
+    "crons": ["0 1 * * *"]
+  },
+  "observability": { "enabled": true },
+  "vars": {
+    "ALLOWED_ORIGINS": "https://juan-pablo-lopez.github.io,http://localhost:5173,http://localhost:4173",
+    "DEFAULT_BASE": "MXN",
+    "UPSTREAM": "https://open.er-api.com/v6/latest"
+  }
+}
