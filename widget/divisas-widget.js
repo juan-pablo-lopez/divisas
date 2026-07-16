@@ -15,6 +15,10 @@ const CONFIG = {
   // "listaABase": cuántas unidades de la base cuestan `monto` de cada moneda.
   direccion: "baseALista",
   apiBase: "https://mercado-divisas.tgojp.workers.dev",
+  // Al tocar el widget se abre esta URL. Nota de iOS: tocar un widget de
+  // Scriptable SIEMPRE abre Scriptable primero (no se puede evitar); con una URL
+  // https, luego salta al sitio en el navegador. Pon "" para no definir URL.
+  tapUrl: "https://juan-pablo-lopez.github.io/divisas/",
 };
 
 // El parámetro del widget (ajustes del widget → "Parameter") puede sobreescribir
@@ -149,6 +153,7 @@ function fondoDegradado() {
 function widgetError(mensaje) {
   const w = new ListWidget();
   w.backgroundGradient = fondoDegradado();
+  if (CONFIG.tapUrl) w.url = CONFIG.tapUrl;
   const t = w.addText("Divisas");
   t.font = Font.semiboldSystemFont(15);
   t.textColor = TEMA.texto;
@@ -163,6 +168,7 @@ function construirWidget(data, stale) {
   const w = new ListWidget();
   w.backgroundGradient = fondoDegradado();
   w.setPadding(14, 14, 12, 14);
+  if (CONFIG.tapUrl) w.url = CONFIG.tapUrl;
 
   // Encabezado
   const header = w.addStack();

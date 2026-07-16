@@ -60,3 +60,8 @@ valores por defecto (los que se usan cuando el Parameter está vacío):
   con el aviso `⚠︎ sin conexión` si no puede alcanzar el Worker.
 - **Filas por tamaño**: pequeño 3, mediano 5, grande hasta 12 monedas.
 - El widget no está sujeto a CORS (las peticiones son nativas, no del navegador).
+- **Tap:** en iOS, tocar un widget de Scriptable **siempre abre Scriptable
+  primero** (no se puede evitar; se probaron esquemas muertos, `javascript:`,
+  `null`, etc. sin éxito). `CONFIG.tapUrl` decide a dónde va *después*: con la URL
+  de la PWA, termina abriendo el sitio en el navegador. Pon `tapUrl: ""` para no
+  definir URL (aun así Scriptable se abrirá).
