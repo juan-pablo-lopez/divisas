@@ -1,0 +1,14 @@
+{
+  "name": "Divisas",
+  "short_name": "Divisas",
+  "description": "Conversor de tipos de cambio con moneda base configurable.",
+  "start_url": "/divisas/",
+  "scope": "/divisas/",
+  "display": "standalone",
+  "background_color": "#f2f7f6",
+  "theme_color": "#0f766e",
+  "icons": [
+    { "src": "divisas.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}
